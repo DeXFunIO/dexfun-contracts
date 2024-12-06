@@ -1,0 +1,61 @@
+{
+  "address": "0xB0f05d25e41FbC2b52013099ED9616f1206Ae21B",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "verify",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xe50a02ec34762465cb35cf396fe6df560110af41d7689f66cbb32dae32d6be53",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xB0f05d25e41FbC2b52013099ED9616f1206Ae21B",
+    "transactionIndex": 0,
+    "gasUsed": "144597",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7bcea0542f5760bfc2f7b72b1ba31b1edbb81e5075d57f0794564f197de49829",
+    "transactionHash": "0xe50a02ec34762465cb35cf396fe6df560110af41d7689f66cbb32dae32d6be53",
+    "logs": [],
+    "blockNumber": 1051446,
+    "cumulativeGasUsed": "144597",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "8633b2d940dff39d9f0bc82edfe9534a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"verify\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/mock/MockRealtimeFeedVerifier.sol\":\"MockRealtimeFeedVerifier\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":10},\"remappings\":[]},\"sources\":{\"contracts/mock/MockRealtimeFeedVerifier.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../oracle/IRealtimeFeedVerifier.sol\\\";\\n\\ncontract MockRealtimeFeedVerifier is IRealtimeFeedVerifier {\\n    function verify(bytes memory data) external pure returns (bytes memory) {\\n        return data;\\n    }\\n}\\n\",\"keccak256\":\"0x8b140b07aea9990eb20fe09a9570a5d65f69d8e5346a7f08c6fe84ce7597aa2d\",\"license\":\"MIT\"},\"contracts/oracle/IRealtimeFeedVerifier.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\ninterface IRealtimeFeedVerifier {\\n    function verify(bytes memory data) external returns (bytes memory);\\n}\\n\",\"keccak256\":\"0xa5742512788fd07c486c4c072c045a643f8eb1e1c2278f00cb54db73e9037393\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b506101a78061001f6000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80638e760afe14610030575b600080fd5b61004161003e36600461006d565b90565b60405161004e9190610123565b60405180910390f35b634e487b7160e01b600052604160045260246000fd5b60006020828403121561007f57600080fd5b81356001600160401b0381111561009557600080fd5b8201601f810184136100a657600080fd5b80356001600160401b038111156100bf576100bf610057565b604051601f8201601f19908116603f011681016001600160401b03811182821017156100ed576100ed610057565b60405281815282820160200186101561010557600080fd5b81602084016020830137600091810160200191909152949350505050565b602081526000825180602084015260005b818110156101515760208186018101516040868401015201610134565b506000604082850101526040601f19601f8301168401019150509291505056fea26469706673582212204c8be911cb1d7b1bf9f41024e8d08739daabcf794aeb1477d05d73306c197e7164736f6c634300081a0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80638e760afe14610030575b600080fd5b61004161003e36600461006d565b90565b60405161004e9190610123565b60405180910390f35b634e487b7160e01b600052604160045260246000fd5b60006020828403121561007f57600080fd5b81356001600160401b0381111561009557600080fd5b8201601f810184136100a657600080fd5b80356001600160401b038111156100bf576100bf610057565b604051601f8201601f19908116603f011681016001600160401b03811182821017156100ed576100ed610057565b60405281815282820160200186101561010557600080fd5b81602084016020830137600091810160200191909152949350505050565b602081526000825180602084015260005b818110156101515760208186018101516040868401015201610134565b506000604082850101526040601f19601f8301168401019150509291505056fea26469706673582212204c8be911cb1d7b1bf9f41024e8d08739daabcf794aeb1477d05d73306c197e7164736f6c634300081a0033",
+  "libraries": {},
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
