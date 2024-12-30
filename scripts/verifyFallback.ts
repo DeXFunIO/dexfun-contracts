@@ -6,13 +6,13 @@ import hre from "hardhat";
 import got from "got";
 
 let apiUrl, apiKey;
-
-if (hre.network.name === "snowtrace") {
-  apiUrl = "https://api.snowtrace.io";
-  apiKey = process.env.SNOWTRACE_API_KEY;
-} else {
-  apiUrl = hre.network.config.verify.etherscan.apiUrl;
-  apiKey = hre.network.config.verify.etherscan.apiKey;
+{
+  for (const chain of hre.userConfig.etherscan.customChains) {
+    if (chain.network === hre.network.name) {
+      apiUrl = chain.urls.apiURL;
+      apiKey = hre.userConfig.etherscan.apiKey?.[chain.network];
+    }
+  }
 }
 
 // a custom argument file may be needed for complex arguments
@@ -22,7 +22,7 @@ if (hre.network.name === "snowtrace") {
 // ARBISCAN_API_KEY=<api key> npx hardhat --network neoX verify --constructor-args ./verification/gov/govTimelockController.js --contract contracts/gov/GovTimelockController.sol:GovTimelockController 0x99Ff4D52e97813A1784bC4A1b37554DC3499D67e
 async function getIsContractVerified(address: string) {
   const res: any = await got
-    .get(`${apiUrl}api`, {
+    .get(`${apiUrl}`, {
       searchParams: {
         module: "contract",
         action: "getabi",
@@ -41,7 +41,7 @@ async function getIsContractVerified(address: string) {
     }
 
     if (!res.result?.includes("Contract source code not verified")) {
-      console.warn("%s: %s", res.message, res.result);
+      console.warn("%s:- %s: %s", address, res.message, res.result);
     }
   }
 
